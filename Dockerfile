@@ -2,7 +2,7 @@
 
 # SET COMMIT ID BELOW!!!
 
-FROM ubuntu:18.04 AS build
+FROM ubuntu:20.04 AS build
 
 LABEL maintainer="Ben Mares <services-docker-build-s3fs@tensorial.com>" \
       name="docker-build-s3fs" \
@@ -11,6 +11,8 @@ LABEL maintainer="Ben Mares <services-docker-build-s3fs@tensorial.com>" \
 
 ARG SCRIPT_SOURCE_DIR=dockerfile_scripts
 ARG SCRIPT_DEST_DIR=/usr/local/bin
+
+ARG DEBIAN_FRONTEND=noninteractive
 
 # Install general build tools
 
